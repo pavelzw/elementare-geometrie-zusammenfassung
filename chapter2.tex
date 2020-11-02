@@ -1,0 +1,42 @@
+\setcounter{section}{1}
+\section{Einleitung}
+
+\begin{karte}{Metrik}
+    Sei \(X\) eine Menge. Eine Funktion \(\abb{f}{X\times X}{\R_{\geq 0}}\) ist eine \textit{Metrik} 
+    (oder Abstandsfunktion), falls für alle \(x,y,z\in X\) gilt: 
+    \begin{description}
+        \item[positiv definit] \(d(x,y) = 0 \Leftrightarrow x = y\),
+        \item[symmetrisch] \(d(x,y) = d(y,x)\),
+        \item[Dreiecksungleichung] \(d(x,z) \leq d(x,y) + d(y,z)\).   
+    \end{description}
+    Ein Paar \((X,d)\) bestehend aus einer Menge \(X\) versehen mit einer Metrik \(d\) heißt 
+    \textit{metrischer Raum}.\\
+    Die Teilmenge \(B_r(x) := \set{y\in X \;|\; d(x,y) \leq r}\) heißt abgeschlossener Ball in \(X\) 
+    mit Zentrum \(x\) und Radius \(r\).\\
+    Seien \((X,d_X)\) und \((Y,d_Y)\) metrische Räume. Eine Abbildung \(\abb{f}{X}{Y}\) heißt 
+    \textit{abstandserhaltend}, falls für alle \(x,y\in X\) gilt: \(d_Y(f(x), f(y)) = d_X(x,y)\).\\
+    Eine \textit{Isometrie} ist eine bijektive und abstandserhaltende Abbildung. Zwei metrische 
+    Räume \(X\) und \(Y\) heißen isometrisch, falls es eine Isometrie \(\abb{f}{X}{Y}\) gibt.
+\end{karte}
+
+\begin{karte}{Euklidische Länge}
+    Sei \(\abb{c}{[a,b]}{\R^2}, t\mapsto c(t) = (x(t),y(t))\) eine stückweise differenzierbare Kurve in 
+    der Ebene. Die \textit{euklidische Länge} von \(c\) ist definiert als 
+    \[ L_{euk}(c) := \int_a^b ||\frac{dc(t)}{dt}||dt = \int_a^b ||c'(t)||dt = \int_a^b \sqrt{x'(t)^2 + y'(t)^2} dt. \]
+
+    \begin{enumerate}
+        \item Die euklidische Länge \(L_{euk}(c)\) einer Kurve \(c\) ist unabhängig von der Parametrisierung.
+        \item \(L_{euk}(c)\) ist invariant unter Translationen, Drehungen und Spiegelungen von \(\R^2\) 
+        (also invariant unter den euklidischen Isometrien der Ebene).
+    \end{enumerate}
+    Die bezüglich der euklidischen Längenmessung kürzesten Verbindungskurven zwischen Punkten der Ebene 
+    \(\R^2\) sind genau die (parametrisierten) Geradensegmente.
+\end{karte}
+
+\begin{karte}{\(d_{euk}\)}
+    Wir können eine Längen-Metrik auf \(\R^2\) definieren. Für 
+    \(p,q\in \R^2\) sei \(W_{p,q}(\R^2)\) die Menge aller stückweise differenzierbaren 
+    Kurven, die \(p\) und \(q\) verbinden. Wir setzen 
+    \[ d_{euk}(p,q) := \inf_{c\in W_{p,q}(\R^2)} L_{euk}(c). \]
+    \((\R^2, d_{euk})\) ist ein metrischer Raum und isometrisch zu \((\R^2, d_e)\).
+\end{karte}
